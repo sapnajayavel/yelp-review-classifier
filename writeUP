@@ -45,7 +45,19 @@ Experiment:
 
 In this experiment we determined if a review had at least 2 vote of usefulness then the review would be considered as useful. 
 
+With a Step size of 0.125 the L2 norm of 2088.29, we got the victor weights for features of
+1] "Weights of feature vector at step size 0.125"
+Base: -56.28003
+Length: -81.06665
+reading ease: -336.45032
+reading level: -1273.93582
+rating of review: -305.03348
+ratio of useful reviews written: 1586.91766
+number of reviews for business -61.15562
+
+Base on the weights, we found that reading ease and ratio of useful reviews written greatly effects the usefulness of a review. When a review the easier to read it is more likely to be useful and users who write useful review is likely to write more useful reviews.
+
 
 Conclusion:
 
-
+This is a very bad algorithm for classifying review usefulness because of the high error. For the final version of the project we will use a different algorithm.  
