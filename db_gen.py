@@ -1,5 +1,5 @@
-import sqlite3
 import json
+import sqlite3
 
 DATA_FILENAME_FORMAT = 'yelp_phoenix_academic_dataset/yelp_academic_dataset_{}.json'
 
