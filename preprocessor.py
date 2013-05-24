@@ -3,7 +3,7 @@ from __future__ import print_function
 import flesch_kincaid
 import sqlite3
 
-USEFUL_THRESHOLD = 5
+USEFUL_THRESHOLD = 2
 
 def gen_feature_vec(review,
                     useful_bools,
