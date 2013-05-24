@@ -103,5 +103,7 @@ if __name__ == "__main__":
     insert_users(c)
     insert_reviews(c)
 
+    c.execute("CREATE INDEX review_useful ON review(useful)")
+
     db.commit()
     db.close()
