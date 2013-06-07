@@ -2,6 +2,7 @@
 
 yelp.sqlite
 features
+average_loss.pdf
 
 ### Yelp dataset
 
@@ -30,6 +31,10 @@ Session.vim
 *~
 
 ### R stuff
+
+# R binary
+
+R
 
 # History files
 .Rhistory
