@@ -1,4 +1,6 @@
-dataMatrix <- read.csv("features", header=FALSE)
+usefulness_threshold = 5
+
+dataMatrix <- read.csv(paste("features_", usefulness_threshold, sep=""), header=FALSE)
 trainTestCutoff = 184000
 totalDataRows = dim(dataMatrix)[1]
 
@@ -47,13 +49,13 @@ test_SSE = function(x, y, w) {
 step_sizes = c(0.5, 0.25, 0.125, 0.1)
 
 par(mfrow=c(4,1))
-pdf("average_loss.pdf", width=5.5, height=4.45)
+pdf(paste("average_loss_", usefulness_threshold, ".pdf", sep=""), width=5.5, height=4.45)
 for (eta in step_sizes) {
   result = sgd(x, y, eta)
   w = result$w
   loss = result$loss
   plot(seq(1000, trainTestCutoff, 1000), loss, xlab="Step Number", ylab="Average Loss")
-  title(paste("Step Number vs. Average Loss at Step Size of", eta))
+  title(paste("Step Num vs. Avg Loss, Eta:", eta, "Useful Threshold:", usefulness_threshold))
   
   print(paste("L2 norm at step size", eta, ":", sqrt(sum(w^2))))
   
