@@ -21,6 +21,12 @@ def normalize(text):
     text = re.sub(r"\s*([%s]+\s*)+" % term, ". ", text)
     return re.sub(r"\s+", " ", text)
 
+def words(text):
+    text = normalize(text)
+    stcs = [s.split(" ") for s in text.split(". ")]
+    stcs = filter(lambda s: len(s) >= 2, stcs)
+    return [word for sublist in stcs for word in sublist]
+
 def text_stats(text):
     text = normalize(text)
     stcs = [s.split(" ") for s in text.split(". ")]
